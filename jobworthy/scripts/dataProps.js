@@ -144,7 +144,8 @@ var dataProps = {
 		['2600', [['display','block'], ['top','100%']]],
 		['3000', [['display','block'], ['top','50%']]],
 		['3300', [['display','block'], ['top','0%']]],
-		['3600', [['display','block'], ['top','-20%']]],
+		['3301', [['display','block'], ['top','0px']]],
+		['3600', [['display','block'], ['top','-300px']]],
 	    ],
 	    nodes: [
 		{
@@ -155,9 +156,16 @@ var dataProps = {
 		    ]
 		},
 		{
+		    id: 'daily_hell',
+		    data: [
+			['3300', [['top','0%']]],
+			['3600', [['top','-15%']]],
+		    ]
+		},
+		{
 		    id: 'office_clock',
 		    data: [
-			['4500', [['top[sqrt]','0%']]],
+			['4500', [['top[sqrt]','10%']]],
 			['4800', [['top','50%']]],
 		    ],
 		    nodes: [
@@ -236,11 +244,11 @@ var dataProps = {
 		    ]
 		},
 		{
-		    id: 'bad_boss_main',
+		    id: 'bad_boss_atdesk',
 		    data: [
-			['4500', [['top','50%'], ['left[sqrt]','-100%']]],
-			['4800', [['top','50%'], ['left[sqrt]','20%']]],
-		    ]
+			['4500', [['left[sqrt]','-5000px']]],
+			['4800', [['left','0px']]],
+		    ],
 		},
 		{
 		    id: 'desk',
