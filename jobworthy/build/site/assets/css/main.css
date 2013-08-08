@@ -149,17 +149,30 @@ div#bad_office {
     margin: 0 auto; }
     div#bad_office div#desk .sprite {
       position: absolute; }
+    div#bad_office div#desk img.desk {
+      position: relative;
+      z-index: 2; }
     div#bad_office div#desk div.tray {
       top: 10px;
       left: 10px;
       width: 162px;
       height: 106px;
-      background-position: -486px 0; }
+      background-position: -486px 0;
+      z-index: 3; }
     div#bad_office div#desk div.badcomputer {
       top: -20px;
       right: 10px;
       width: 151px;
-      height: 153px; }
+      height: 153px;
+      z-index: 3; }
+    div#bad_office div#desk div.bad_boss {
+      position: absolute;
+      width: 176px;
+      height: 474px;
+      top: -200px;
+      z-index: 1; }
+  div#bad_office div#jobsworthy_main {
+    z-index: 3; }
 
 .title {
   text-align: center;
