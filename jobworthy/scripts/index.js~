@@ -1,0 +1,48 @@
+var jsdom    = require('jsdom');
+var fs       = require("fs");
+
+
+var config   = require("./config").config;
+var dataProps = require("./dataProps").dataProps;
+
+console.log("loaded following config variables: ");
+console.log(config)
+ 
+var parser = require('./parser').parser
+
+var jquery   = fs.readFileSync(config.pathToJQuery, "utf-8");
+
+jsdom.env({
+    file: config.siteSourceHtml,
+    src: [jquery],
+    done: function (errors, window) {
+	var $ = window.$;
+	
+	var processScenes = dataProps.scenes.forEach(function(scene,index,arr){
+
+	    var id = $('#'+scene.id);
+	    try {
+		if (id.length < 1){
+		    throw new Error("Named element id: '" + scene.id  + "' doesn't exist");
+		}
+		console.log("Got element: '" + scene.id + "';")
+	    } catch (e) {
+		console.log(e);
+	    }
+
+
+
+
+
+	    var parseScene = new parser(scene, function(err, parser){
+		if (err) console.log(err);
+		if (parser){
+		    parser.on('dataProp', function(e){console.log(e);});
+		    parser.parse();
+		}
+	    });
+	});
+
+
+    }
+});

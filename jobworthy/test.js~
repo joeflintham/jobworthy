@@ -1,0 +1,9 @@
+
+
+var test = function(args, callback){
+    run = function(){
+	if (callback) { callback(error, feedJSON); }
+    }
+}
+
+exports.test = test

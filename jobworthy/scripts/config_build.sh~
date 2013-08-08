@@ -1,0 +1,4 @@
+#!/bin/bash
+IMAGE_ASSET_FOLDER="build/site/assets/images"
+CSS_PATH_TO_IMAGES="/jobsworthy/assets/images"
+HTML_FRAGMENT_FOLDER="build/fragments"

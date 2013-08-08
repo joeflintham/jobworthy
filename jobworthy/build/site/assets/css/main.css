@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'elsieregular';
+  src: url("../fonts/elsie-regular-webfont.eot");
+  src: url("../fonts/elsie-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/elsie-regular-webfont.woff") format("woff"), url("../fonts/elsie-regular-webfont.ttf") format("truetype"), url("../fonts/elsie-regular-webfont.svg#elsieregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background: #E6E6E6;
+  font-size: 3.3em; }
+
+.wrapper {
+  position: relative;
+  width: 960px;
+  height: 100%;
+  margin: 0 auto; }
+
+/* defaults */
+span.shrink {
+  font-size: 70%; }
+
+.cursive {
+  font-family: elsieregular; }
+
+.constrain-width {
+  margin: 0 auto;
+  width: 960px; }
+
+.indent10 {
+  margin-left: 10%; }
+
+.indent20 {
+  margin-left: 20%; }
+
+.indent30 {
+  margin-left: 30%; }
+
+.tweenable {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0); }
+
+.centreable {
+  position: absolute;
+  width: 100%; }
+  .centreable .centred {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+.anchor_bottom {
+  position: absolute;
+  bottom: 0px; }
+
+.permanent {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0%; }
+
+.speech_bubble {
+  font-family: "Myriad Pro", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 75%;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 30px;
+  border: 8px solid black; }
+  .speech_bubble#jobsworthy_label {
+    width: 340px;
+    max-height: 85px; }
+  .speech_bubble#hates_job {
+    width: 240px;
+    max-height: 85px; }
+  .speech_bubble p {
+    padding-top: 3px;
+    margin: 0;
+    text-align: center;
+    width: 100%; }
+
+.sprite {
+  overflow: hidden; }
+  .sprite.jobsworthy {
+    background: transparent url(../images/jobsworthy.png) no-repeat 0 0;
+    width: 130px;
+    height: 336px; }
+  .sprite.tray {
+    background: transparent url(../images/traysprite.png) no-repeat 0 0;
+    width: 162px;
+    height: 106px; }
+  .sprite.badcomputer {
+    background: transparent url(../images/badcomputersprite.png) no-repeat 0 0;
+    width: 151px;
+    height: 153px; }
+  .sprite.bad_boss.sprite {
+    background: transparent url(../images/badbosssprite.png) no-repeat 0 0;
+    width: 176px;
+    height: 474px; }
+
+/* SCENES */
+.scene {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 100%; }
+
+/* specifics */
+div#intro {
+  top: 0%; }
+
+div#city_jobs {
+  top: 0%; }
+  div#city_jobs div#cloud_nine {
+    position: absolute;
+    width: 100%; }
+    div#city_jobs div#cloud_nine img {
+      left: 0px; }
+  div#city_jobs div#cloud_ten {
+    position: relative;
+    width: 100%; }
+    div#city_jobs div#cloud_ten img {
+      right: 0px; }
+  div#city_jobs div#building_jobs,
+  div#city_jobs div#building_careers {
+    width: 100%;
+    height: 100%; }
+  div#city_jobs div#building_careers img {
+    right: 0px; }
+
+div#bad_office {
+  background: #808080; }
+  div#bad_office div#daily_hell {
+    top: -36px; }
+  div#bad_office div#office_clock {
+    top: 50%;
+    right: 200px;
+    width: 142px;
+    height: 142px;
+    overflow: hidden; }
+    div#bad_office div#office_clock img {
+      position: absolute; }
+  div#bad_office div#brown_carpet {
+    width: 100%;
+    height: 2000px;
+    background: #63201B; }
+  div#bad_office div#desk {
+    position: relative;
+    width: 613px;
+    margin: 0 auto; }
+    div#bad_office div#desk .sprite {
+      position: absolute; }
+    div#bad_office div#desk div.tray {
+      top: 10px;
+      left: 10px;
+      width: 162px;
+      height: 106px;
+      background-position: -486px 0; }
+    div#bad_office div#desk div.badcomputer {
+      top: -20px;
+      right: 10px;
+      width: 151px;
+      height: 153px; }
+
+.title {
+  text-align: center;
+  line-height: 0.8; }
+  .title h1 {
+    font-weight: normal;
+    margin-top: 200px;
+    display: inline-block;
+    text-align: left;
+    color: #7da5cb; }
+    .title h1 span.shrink {
+      font-size: 60%; }
