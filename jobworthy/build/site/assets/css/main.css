@@ -5,13 +5,16 @@
   font-weight: normal;
   font-style: normal; }
 
+* {
+  /*z-index: 1;*/ }
+
 body {
   background: #E6E6E6;
   font-size: 3.3em; }
 
 .wrapper {
   position: relative;
-  width: 960px;
+  max-width: 70vw;
   height: 100%;
   margin: 0 auto; }
 
@@ -22,9 +25,8 @@ span.shrink {
 .cursive {
   font-family: elsieregular; }
 
-.constrain-width {
-  margin: 0 auto;
-  width: 960px; }
+.constrain_width {
+  margin: 0 auto; }
 
 .indent10 {
   margin-left: 10%; }
@@ -63,6 +65,8 @@ span.shrink {
   font-weight: bold;
   font-size: 75%;
   margin-bottom: 10px;
+  margin-top: 20px;
+  z-index: 100;
   background: white;
   border-radius: 30px;
   border: 8px solid black; }
@@ -72,6 +76,92 @@ span.shrink {
   .speech_bubble#hates_job {
     width: 240px;
     max-height: 85px; }
+  .speech_bubble#leaves_job {
+    position: relative;
+    top: 75%;
+    left: 75%;
+    width: 240px;
+    max-height: 85px; }
+  .speech_bubble#looks_around {
+    position: relative;
+    top: 25%;
+    width: 320px;
+    max-height: 200px; }
+  .speech_bubble#home_bubble {
+    position: relative;
+    top: 105%;
+    width: 150px;
+    max-height: 200px; }
+  .speech_bubble#cv_time {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    width: 300px;
+    max-height: 200px;
+    z-index: 7; }
+  .speech_bubble#interview_bubble {
+    position: absolute;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    width: 50%;
+    overflow: hidden;
+    bottom: 10%;
+    width: 350px;
+    max-height: 80px;
+    z-index: 7;
+    font-size: 120%; }
+    .speech_bubble#interview_bubble p {
+      padding-top: 6px; }
+  .speech_bubble#yay_bubble {
+    position: absolute;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    width: 50%;
+    overflow: hidden;
+    bottom: 10%;
+    width: 100px;
+    max-height: 80px;
+    z-index: 7; }
+  .speech_bubble#fixup_bubble {
+    width: 250px;
+    max-height: 200px;
+    z-index: 7; }
+  .speech_bubble#whistle_bubble {
+    width: 350px;
+    max-height: 200px;
+    z-index: 7; }
+  .speech_bubble.cv_label {
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+    top: 65%;
+    height: 50px;
+    max-height: 85px;
+    margin: 0 auto;
+    z-index: 7; }
+  .speech_bubble.ring {
+    position: absolute;
+    height: 50px;
+    max-height: 85px;
+    z-index: 7;
+    width: 120px; }
+  .speech_bubble.hates {
+    width: 240px;
+    max-height: 95px;
+    position: relative;
+    top: -100px;
+    z-index: 5; }
   .speech_bubble p {
     padding-top: 3px;
     margin: 0;
@@ -96,44 +186,139 @@ span.shrink {
     background: transparent url(../images/badbosssprite.png) no-repeat 0 0;
     width: 176px;
     height: 474px; }
+  .sprite.birdie.sprite {
+    background: transparent url(../images/birdie.png) no-repeat 0 0;
+    width: 95px;
+    height: 140px; }
+  .sprite.officewindow.sprite {
+    background: transparent url(../images/officewindow.png) no-repeat 0 0;
+    width: 280px;
+    height: 273px; }
+  .sprite.cat.sprite {
+    background: transparent url(../images/cat.png) no-repeat 0 0;
+    width: 139px;
+    height: 130px; }
+  .sprite.cv.sprite {
+    background: transparent url(../images/cv.png) no-repeat 0 0;
+    width: 175px;
+    height: 207px; }
+  .sprite.jb_idea.sprite {
+    background: transparent url(../images/jb_idea.png) no-repeat 0 0;
+    width: 164px;
+    height: 510px; }
+  .sprite.jb_personality.sprite {
+    background: transparent url(../images/jb_personality.png) no-repeat 0 0;
+    width: 158px;
+    height: 156px; }
+  .sprite.clipboard.sprite {
+    background: transparent url(../images/clipboard.png) no-repeat -197px 0;
+    width: 197px;
+    height: 236px; }
+  .sprite.lcd_machine.sprite {
+    background: transparent url(../images/lcd_machine.png) no-repeat 0 0;
+    width: 745px;
+    height: 110px; }
+  .sprite.conveyor.sprite {
+    background: transparent url(../images/conveyor_belt.png) repeat-y 0 0;
+    width: 244px;
+    height: 436px; }
+  .sprite.wardrobe.sprite {
+    background: transparent url(../images/wardrobe.png) no-repeat 0 0;
+    width: 585px;
+    height: 596px; }
+
+div.thought_bubble img {
+  position: relative;
+  z-index: 3; }
+div.thought_bubble .window {
+  z-index: 1;
+  width: 573px;
+  height: 444px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  background-color: white; }
+  div.thought_bubble .window .sprite {
+    position: relative; }
+
+div.door_way, div.door {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  right: 0; }
 
 /* SCENES */
 .scene {
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 100%; }
+  top: 100%;
+  border: 1px solid black; }
 
-/* specifics */
-div#intro {
-  top: 0%; }
+/* speecifics */
+div#_intro {
+  height: 4000px; }
+
+div#_city_jobs {
+  height: 3000px; }
+
+div#_bad_office {
+  height: 10000px; }
+
+div#_jobshire {
+  height: 9000px; }
+
+div#_tree_stump {
+  height: 4000px; }
+
+div#_home {
+  height: 6500px; }
+
+div#_factory {
+  height: 5500px; }
+
+div#_selection {
+  height: 8000px; }
+
+div#_suiting_up {
+  height: 8000px; }
 
 div#city_jobs {
   top: 0%; }
   div#city_jobs div#cloud_nine {
     position: absolute;
-    width: 100%; }
+    width: 100%;
+    z-index: 4; }
     div#city_jobs div#cloud_nine img {
-      left: 0px; }
+      left: 0; }
   div#city_jobs div#cloud_ten {
     position: relative;
     width: 100%; }
     div#city_jobs div#cloud_ten img {
-      right: 0px; }
+      right: 0; }
   div#city_jobs div#building_jobs,
   div#city_jobs div#building_careers {
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    z-index: 2; }
   div#city_jobs div#building_careers img {
     right: 0px; }
+  div#city_jobs div#grey_back {
+    width: 100%;
+    height: 2500px;
+    background: #808080;
+    z-index: 1; }
+  div#city_jobs div#daily_hell {
+    margin-top: -36px;
+    z-index: 5; }
 
 div#bad_office {
   background: #808080; }
-  div#bad_office div#daily_hell {
-    top: -36px; }
   div#bad_office div#office_clock {
     top: 50%;
-    right: 200px;
+    right: 0;
     width: 142px;
     height: 142px;
     overflow: hidden; }
@@ -141,12 +326,18 @@ div#bad_office {
       position: absolute; }
   div#bad_office div#brown_carpet {
     width: 100%;
-    height: 2000px;
-    background: #63201B; }
+    height: 100%;
+    background: #63201B;
+    top: 50%; }
+  div#bad_office div#jobsworthy_main {
+    z-index: 4;
+    top: 40%; }
   div#bad_office div#desk {
-    position: relative;
-    width: 613px;
-    margin: 0 auto; }
+    left: 0;
+    margin: auto;
+    right: 0;
+    top: 0;
+    width: 613px; }
     div#bad_office div#desk .sprite {
       position: absolute; }
     div#bad_office div#desk img.desk {
@@ -171,16 +362,561 @@ div#bad_office {
       height: 474px;
       top: -200px;
       z-index: 1; }
-  div#bad_office div#jobsworthy_main {
-    z-index: 3; }
+  div#bad_office div#thoughts {
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    top: 0;
+    width: 50%;
+    overflow: visible;
+    width: 100%;
+    z-index: 5; }
+    div#bad_office div#thoughts div#thought_pop {
+      left: 35%;
+      top: 15%;
+      z-index: 3; }
+    div#bad_office div#thoughts div#thought_grow {
+      left: 40%;
+      top: 10%;
+      z-index: 3; }
+    div#bad_office div#thoughts div#thought_bubble {
+      z-index: 2;
+      left: 50%;
+      width: 573px;
+      height: 444px;
+      background-repeat: no-repeat;
+      background-position: center center; }
+    div#bad_office div#thoughts div#hates_bully_boss {
+      position: relative;
+      width: 176px;
+      height: 474px;
+      overflow: hidden; }
+      div#bad_office div#thoughts div#hates_bully_boss img {
+        position: absolute;
+        top: 0;
+        z-index: 4; }
+        div#bad_office div#thoughts div#hates_bully_boss img.boss_body {
+          z-index: 3;
+          width: 160px;
+          top: 150px;
+          left: 8px; }
+    div#bad_office div#thoughts div#hates_clock {
+      position: relative;
+      width: 144px;
+      height: 144px; }
+      div#bad_office div#thoughts div#hates_clock img {
+        position: absolute;
+        top: 0; }
+  div#bad_office div#bad_office_exit {
+    width: 100%;
+    height: 75%;
+    background: #9ebfc8;
+    z-index: 4; }
+    div#bad_office div#bad_office_exit div#door_sign {
+      position: relative;
+      top: 15%;
+      margin-left: -50%; }
+    div#bad_office div#bad_office_exit div#officewindow {
+      position: absolute;
+      bottom: 15%;
+      right: 10%; }
+    div#bad_office div#bad_office_exit div#door_way, div#bad_office div#bad_office_exit div#door {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      right: 0; }
+  div#bad_office div#grass {
+    width: 100%;
+    height: 100%;
+    background: #8CA560;
+    top: 75%; }
+
+div#_jobshire,
+div#_tree_stump {
+  background: #8CA560; }
+
+div#jobshire div#jobshire_grass {
+  width: 100%;
+  height: 100%;
+  background: #8CA560;
+  top: 75%; }
+div#jobshire div#jobsworthy_jobseeker {
+  position: absolute;
+  bottom: 25%;
+  z-index: 5; }
+div#jobshire div#looks_around {
+  position: absolute; }
+div#jobshire div#jobshire_sign {
+  z-index: 4; }
+  div#jobshire div#jobshire_sign .birdie.sprite {
+    position: absolute;
+    z-index: 6;
+    top: -110px;
+    left: 45px; }
+div#jobshire div#grass_clump {
+  right: 0px; }
+
+div#tree_stump div#stump {
+  position: absolute;
+  bottom: 30%;
+  right: 10%;
+  z-index: 5; }
+div#tree_stump div#tree_thought_pop {
+  z-index: 3;
+  bottom: 50%;
+  right: 30%; }
+div#tree_stump div#tree_thought_grow {
+  z-index: 3;
+  bottom: 55%;
+  right: 30%; }
+div#tree_stump div#tree_thought_bubble {
+  z-index: 1;
+  width: 573px;
+  height: 444px;
+  top: 10%;
+  left: 10%;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+div#home {
+  background: #6D5872; }
+  div#home div#home_interior {
+    width: 100%;
+    height: 60%;
+    background: #98789C; }
+    div#home div#home_interior div#home_portrait,
+    div#home div#home_interior div#home_sweet_home {
+      position: absolute;
+      top: 45%; }
+    div#home div#home_interior div#home_portrait {
+      left: 20%; }
+    div#home div#home_interior div#home_sweet_home {
+      top: 50%;
+      right: 20%; }
+  div#home div#table {
+    position: absolute;
+    bottom: -20%;
+    left: 10%;
+    width: 313px; }
+    div#home div#table div#table_cv {
+      position: absolute;
+      top: -30px;
+      left: 67px;
+      transform: scale(0.75);
+      -webkit-transform: scale(0.75); }
+  div#home div#cat {
+    position: absolute;
+    bottom: -10%;
+    right: 10%; }
+  div#home div#jobsworthy_cvbuilder {
+    position: absolute;
+    bottom: 40%;
+    z-index: 5; }
+  div#home div#with_label {
+    width: 160px; }
+  div#home div#skills_label {
+    width: 160px; }
+  div#home div#education_label {
+    width: 250px; }
+  div#home div#experience_label {
+    width: 250px; }
+  div#home div#personality_label {
+    width: 280px; }
+  div#home div#cv_build_screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #E1C57F;
+    z-index: 6; }
+    div#home div#cv_build_screen div#cv_build_window {
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      left: 0;
+      margin: auto;
+      overflow: auto;
+      right: 0;
+      top: 0;
+      width: 50%;
+      overflow: hidden;
+      width: 258px;
+      height: 258px;
+      background: #9D6666; }
+      div#home div#cv_build_screen div#cv_build_window img#cv_bubble_img {
+        position: absolute;
+        z-index: 7; }
+      div#home div#cv_build_screen div#cv_build_window div.reveal {
+        position: relative; }
+        div#home div#cv_build_screen div#cv_build_window div.reveal img {
+          position: absolute;
+          top: 0;
+          z-index: 4; }
+      div#home div#cv_build_screen div#cv_build_window div#jb_handyman {
+        width: 139px;
+        height: 360px; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_handyman div#spanner {
+          position: absolute;
+          z-index: 6;
+          width: 43px;
+          height: 69px;
+          top: 40%; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_handyman div#hammer {
+          position: absolute;
+          z-index: 6;
+          width: 58px;
+          height: 59px;
+          top: 40%;
+          right: 0; }
+      div#home div#cv_build_screen div#cv_build_window div#jb_student {
+        width: 181px;
+        height: 429px; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_student div {
+          position: absolute;
+          z-index: 6; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_student div#scroll {
+          width: 50px;
+          height: 53px;
+          top: 45%;
+          left: 40%; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_student div.star {
+          width: 31px;
+          height: 29px; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_student div#star_1 {
+          top: 5%;
+          right: 5%; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_student div#star_2 {
+          top: 8%;
+          left: 0%; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_student div#star_3 {
+          top: 40%;
+          right: -5%; }
+        div#home div#cv_build_screen div#cv_build_window div#jb_student div#star_4 {
+          top: 35%;
+          left: -5%; }
+      div#home div#cv_build_screen div#cv_build_window div#jb_idea {
+        width: 164px;
+        height: 510px; }
+      div#home div#cv_build_screen div#cv_build_window div#jb_personality {
+        width: 158px;
+        height: 156px; }
+  div#home div#clipboard {
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    top: 0;
+    width: 50%;
+    position: absolute;
+    z-index: 10;
+    width: 197px;
+    height: 236px; }
+    div#home div#clipboard img {
+      position: absolute;
+      top: 0;
+      z-index: 10; }
+    div#home div#clipboard div#cv_progress {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 175px;
+      height: 207px; }
+
+div#factory {
+  background: #F5F0E0;
+  z-index: 11; }
+  div#factory div#scanner_cv {
+    position: absolute;
+    background-position: -700px 0;
+    bottom: 0;
+    height: 50%;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+    width: 175px;
+    height: 207px;
+    z-index: 13; }
+  div#factory div#scanner {
+    height: 100%;
+    z-index: 12;
+    position: absolute; }
+    div#factory div#scanner div#scanner_desk {
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      left: 0;
+      margin: auto;
+      overflow: auto;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 293px;
+      top: -25%; }
+    div#factory div#scanner div#conveyor {
+      position: absolute;
+      left: 0;
+      margin: auto;
+      overflow: auto;
+      right: 0;
+      width: 50%;
+      top: 24%;
+      width: 244px;
+      height: 4000px; }
+  div#factory div#scanner_kit {
+    height: 100%;
+    z-index: 14;
+    position: absolute; }
+    div#factory div#scanner_kit div#scanner_computer {
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      left: 0;
+      margin: auto;
+      overflow: auto;
+      right: 0;
+      top: 0;
+      width: 50%;
+      top: -45%; }
+    div#factory div#scanner_kit div#lcd_machine {
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      left: 0;
+      margin: auto;
+      overflow: auto;
+      right: 0;
+      top: 0;
+      width: 50%;
+      width: 745px;
+      height: 110px;
+      top: 50%; }
+  div#factory div#security {
+    height: 100%;
+    z-index: 14;
+    position: absolute; }
+    div#factory div#security div.hurdle {
+      bottom: 0;
+      height: 50%;
+      margin: auto;
+      overflow: auto;
+      top: 0;
+      height: 446px; }
+    div#factory div#security div#left_hurdle {
+      right: 30%; }
+    div#factory div#security div#right_hurdle {
+      left: 30%; }
+    div#factory div#security div.security_arm {
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      margin: auto;
+      overflow: auto;
+      top: 0;
+      height: 75px; }
+    div#factory div#security div#right_security_arm {
+      left: 70%;
+      transform: scaleX(-1);
+      -webkit-transform: scaleX(-1); }
+    div#factory div#security div#left_security_arm {
+      right: 70%; }
+  div#factory div#matches {
+    height: 100%;
+    z-index: 14;
+    position: absolute; }
+    div#factory div#matches div#matching_machine {
+      bottom: 0;
+      height: 50%;
+      margin: auto;
+      overflow: auto;
+      top: 0;
+      overflow: hidden;
+      height: 441px; }
+    div#factory div#matches div.thumbs_up {
+      bottom: 0;
+      height: 50%;
+      margin: auto;
+      overflow: auto;
+      top: 0;
+      height: 131px;
+      overflow: visible; }
+    div#factory div#matches div#left_thumbs_up {
+      transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+      -webkit-transform-origin: 0% 0%;
+      right: 30%; }
+      div#factory div#matches div#left_thumbs_up img {
+        transform-origin: 0% 75%;
+        -ms-transform-origin: 0% 75%;
+        -webkit-transform-origin: 0% 75%; }
+    div#factory div#matches div#right_thumbs_up {
+      left: 30%; }
+      div#factory div#matches div#right_thumbs_up img {
+        transform-origin: 100% 75%;
+        -ms-transform-origin: 100% 75%;
+        -webkit-transform-origin: 100% 75%; }
+  div#factory div#factory_mask {
+    width: 100%;
+    height: 100%;
+    background: #F5F0E0;
+    z-index: 13; }
+
+div#selection {
+  background: #F5F0E0;
+  z-index: 10; }
+  div#selection div#match_line {
+    position: fixed;
+    width: 100%;
+    height: 100%; }
+    div#selection div#match_line svg path {
+      fill: none;
+      stroke: #567483;
+      stroke-width: 14;
+      stroke-linecap: round;
+      stroke-linejoin: miter;
+      stroke-miterlimit: 4;
+      stroke-opacity: 1;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 0; }
+    div#selection div#match_line div.jobbox {
+      position: absolute;
+      border: 10px solid #C6C7C9;
+      background-color: #C76758;
+      overflow: hidden;
+      width: 160px;
+      height: 200px; }
+      div#selection div#match_line div.jobbox#prospect_one {
+        top: 10%;
+        right: 25%; }
+      div#selection div#match_line div.jobbox#prospect_two {
+        top: 20%;
+        left: 25%; }
+      div#selection div#match_line div.jobbox#prospect_three {
+        top: 40%;
+        right: 20%; }
+      div#selection div#match_line div.jobbox#prospect_four {
+        top: 60%;
+        left: 15%; }
+      div#selection div#match_line div.jobbox#prospect_five {
+        bottom: 0%;
+        left: 0;
+        margin: auto;
+        overflow: auto;
+        right: 0;
+        width: 50%;
+        width: 160px;
+        margin: 0 auto; }
+  div#selection div#phone_carpet {
+    width: 100%;
+    height: 100%;
+    background: #6D5872; }
+  div#selection div#phone_call {
+    position: absolute;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    right: 0;
+    width: 50%;
+    overflow: visible;
+    width: 230px;
+    height: 208px; }
+    div#selection div#phone_call div#phone_desk {
+      position: absolute; }
+    div#selection div#phone_call div#desk_phone {
+      position: absolute;
+      top: -20px; }
+  div#selection div#ring_one {
+    top: 60%;
+    left: 20%; }
+  div#selection div#ring_two {
+    top: 80%;
+    left: 10%; }
+  div#selection div#ring_three {
+    top: 70%;
+    right: 15%; }
+
+div#_suiting_up {
+  background: #6D5872; }
+  div#_suiting_up div#suiting_up {
+    z-index: 11; }
+    div#_suiting_up div#suiting_up div#jobsworthy_suiting_up {
+      position: absolute;
+      top: 0%;
+      height: 70%; }
+      div#_suiting_up div#suiting_up div#jobsworthy_suiting_up div.jobsworthy {
+        position: absolute;
+        left: 0;
+        margin: auto;
+        overflow: auto;
+        right: 0;
+        width: 50%;
+        height: 336px;
+        width: 130px;
+        bottom: 0%;
+        z-index: 1; }
+      div#_suiting_up div#suiting_up div#jobsworthy_suiting_up div#wardrobe {
+        position: absolute;
+        left: 0;
+        margin: auto;
+        overflow: auto;
+        right: 0;
+        width: 50%;
+        transform-origin: 50% 100%;
+        -ms-transform-origin: 50% 100%;
+        -webkit-transform-origin: 50% 100%;
+        height: 596px;
+        width: 585px;
+        bottom: -5%;
+        z-index: 2; }
+      div#_suiting_up div#suiting_up div#jobsworthy_suiting_up div#jobsworthy_suited {
+        position: absolute;
+        left: 0;
+        margin: auto;
+        overflow: auto;
+        right: 0;
+        width: 50%;
+        width: 199px;
+        height: 336px;
+        bottom: 0%;
+        z-index: 3; }
+      div#_suiting_up div#suiting_up div#jobsworthy_suiting_up div#jobsworthy_screen {
+        position: absolute;
+        left: 0;
+        margin: auto;
+        overflow: auto;
+        right: 0;
+        width: 50%;
+        overflow: hidden;
+        width: 585px;
+        height: 596px;
+        bottom: -5%;
+        z-index: 4; }
+  div#_suiting_up div#fixup_bubble {
+    position: absolute;
+    top: 40%;
+    right: 10%; }
+  div#_suiting_up div#whistle_bubble {
+    position: absolute;
+    bottom: 10%;
+    right: 10%; }
 
 .title {
   text-align: center;
   line-height: 0.8; }
   .title h1 {
+    position: relative;
+    top: 10vh;
+    height: 100vh;
     font-weight: normal;
-    margin-top: 200px;
-    display: inline-block;
+    diseechlay: inline-block;
     text-align: left;
     color: #7da5cb; }
     .title h1 span.shrink {

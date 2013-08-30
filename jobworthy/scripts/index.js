@@ -2,10 +2,23 @@
 
 var jsdom    = require('jsdom');
 var fs       = require("fs");
+var url      = require("url");
 
+var argV = {}
+/* parse arguments */
+var match, argV;
+process.argv.forEach(function(val, index, array){
+    if (match = (val).match(/^--(.+)/)){
+	var arg = match[1].split('=');
+	var key = arg[0]; argV[key] = arg[1];
+    }
+});
 
-var config   = require("./config").config;
-var dataProps = require("./dataProps").dataProps;
+/* initialise cache */
+var configfile        = (argV["configfile"]) ? argV["configfile"] : '';
+
+var config   = require("./"+configfile+"config").config;
+var dataProps = require("./"+configfile+"dataProps").dataProps;
 
 console.log("\nloaded following config variables: ");
 console.log(config)
